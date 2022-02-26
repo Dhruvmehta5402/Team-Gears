@@ -1,0 +1,12 @@
+import { style } from "@angular/animations";
+import { Component, OnInit } from "@angular/core";
+
+@Component({
+  selector: 'app-map',
+  templateUrl: './map.component.html',
+  styleUrls: ['./map.component.css']
+})
+
+export class MapComponent {
+
+}
