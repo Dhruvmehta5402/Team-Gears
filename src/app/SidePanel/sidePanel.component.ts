@@ -8,5 +8,5 @@ import { Component } from "@angular/core";
 })
 
 export class SidePanelComponent {
-  showFiller = false;
+  // showFiller = false;
 }
