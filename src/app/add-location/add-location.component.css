@@ -1,0 +1,30 @@
+div {
+  text-align: center;
+}
+h1 {
+  color: #002b5c;
+}
+label {
+  text-align: left;
+  font-size: large;
+  color: #002b5c;
+}
+input {
+  border-radius: 5px;
+  outline: none;
+  width: 200px;
+  font-size: 16px;
+}
+
+textarea {
+  border-radius: 5px;
+  resize: none;
+  outline: none;
+  font-size: 16px;
+  scrollbar-width: thin;
+}
+
+button {
+  background-color: #002b5c;
+  color: white;
+}

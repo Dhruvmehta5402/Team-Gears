@@ -13,6 +13,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http'
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { GoogleMapsModule } from '@angular/google-maps'
 
@@ -21,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidePanelComponent } from './SidePanel/sidePanel.component';
 import { MapComponent } from './Map/map.component';
 import { SearchBarComponent } from './SearchBar/searchBar.component';
+import { AddLocationComponent } from './add-location/add-location.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { SearchBarComponent } from './SearchBar/searchBar.component';
     SidePanelComponent,
     MapComponent,
     SearchBarComponent,
+    AddLocationComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,8 @@ import { SearchBarComponent } from './SearchBar/searchBar.component';
     MatFormFieldModule,
     HttpClientModule,
     GoogleMapsModule,
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
