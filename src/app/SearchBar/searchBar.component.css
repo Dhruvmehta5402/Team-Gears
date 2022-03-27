@@ -1,0 +1,16 @@
+.form {
+  color: lightgray;
+}
+
+.mat-form-field {
+  float: left;
+  /* display:inline-block; */
+  color: lightgray;
+}
+.input {
+  color: lightgray;
+}
+
+.button {
+  width: 10px;
+}
