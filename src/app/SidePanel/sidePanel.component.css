@@ -1,6 +1,6 @@
 mat-sidenav {
   /* margin: 16px; */
-  width: 200px;
+  width: 250px;
   height: 100vh;
   border-right: none;
   background: #002b5c;
@@ -31,7 +31,11 @@ mat-sidenav-container {
 
 .panel-button {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
+  /* background-color: #002b5c; */
+  mat-icon {
+    margin-right: 8px;
+  }
 }
 
 .menu-button {
@@ -51,17 +55,6 @@ mat-sidenav-container {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-}
-
-.name {
-  margin-top: 8px;
-  font-weight: normal;
-}
-
-.designation {
-  margin-top: 2px;
-  font-size: 0.7rem;
-  color: lightgrey;
 }
 
 mat-divider {

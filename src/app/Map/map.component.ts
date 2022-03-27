@@ -1,5 +1,6 @@
 import { style } from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
+import { EventPin } from "./event.model";
 
 @Component({
   selector: 'app-map',
@@ -8,12 +9,14 @@ import { Component, OnInit } from "@angular/core";
 })
 
 export class MapComponent {
+  eventPins = {}
+
   mapOptions: google.maps.MapOptions = {
-    center: { lat: 38.9987208, lng: -77.2538699 },
-    zoom : 50,
+    center: { lat: 40.10921097408571, lng: -88.22723153914798 },
+    zoom : 16,
     disableDefaultUI: true,
   }
   marker = {
-    position: { lat: 38.9987208, lng: -77.2538699 },
+    position: { lat: 40.10921097408571, lng: -88.22723153914798 },
   }
 }
