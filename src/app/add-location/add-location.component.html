@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>New Event</h1>
+  <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+    <div class="form-group">
+      <label for="name">Name</label><br />
+      <input type="text" name="name" class="form-control" ngModel />
+    </div>
+    <pre></pre>
+    <div class="form-group">
+      <label for="address">Address</label><br />
+      <input type="text" name="address" class="form-control" ngModel />
+    </div>
+    <pre></pre>
+    <div class="form-group">
+      <label for="purpose">Purpose</label><br />
+      <textarea name="purpose" cols="30" rows="5" ngModel></textarea>
+    </div>
+    <pre></pre>
+  </form>
+  <button mat-flat-button type="submit" (click)="closeDialog()">Submit</button>
+</div>

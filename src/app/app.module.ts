@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 import { GoogleMapsModule } from '@angular/google-maps'
 
@@ -13,6 +15,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidePanelComponent } from './SidePanel/sidePanel.component';
 import { MapComponent } from './Map/map.component';
+import { AddLocationComponent } from './add-location/add-location.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { MapComponent } from './Map/map.component';
     HeaderComponent,
     SidePanelComponent,
     MapComponent,
+    AddLocationComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,8 @@ import { MapComponent } from './Map/map.component';
     MatDividerModule,
     MatSidenavModule,
     GoogleMapsModule,
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
