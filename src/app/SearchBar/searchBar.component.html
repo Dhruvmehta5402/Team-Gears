@@ -1,9 +1,6 @@
 <form (submit)="onSearch(eventSearch)" #eventSearch="ngForm">
-
   <mat-form-field>
-    <span matPrefix> </span>
-    <input matInput type="text" name="search" ngModel required #search="ngModel" placeholder="Search">
-    <button mat-raised-button color="primary" type="submit"><mat-icon>search</mat-icon></button>
-    <mat-error *ngIf="search.invalid">Please search for an event</mat-error>
+    <input matInput type="text" name="search" ngModel #search="ngModel" placeholder="Search">
+    <button matSuffix mat-button color="primary" type="submit"><mat-icon>search</mat-icon></button>
   </mat-form-field>
 </form>
