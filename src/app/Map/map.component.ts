@@ -1,8 +1,7 @@
 import { style } from "@angular/animations";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core'
+import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps'
 import { EventPin } from "./event.model";
-import { ViewChild } from '@angular/core'
-import { GoogleMap } from "@angular/google-maps";
 
 @Component({
   selector: 'app-map',
@@ -11,7 +10,8 @@ import { GoogleMap } from "@angular/google-maps";
 })
 
 export class MapComponent implements OnInit {
-  // @ViewChild(GoogleMap, { static: false }) map!: GoogleMap
+  @ViewChild(GoogleMap, { static: false }) map!: GoogleMap
+  @ViewChild(MapInfoWindow, { static: false }) info!: MapInfoWindow
 
   mapOptions: google.maps.MapOptions = {
     center: { lat: 40.10921097408571, lng: -88.22723153914798 },
@@ -23,21 +23,19 @@ export class MapComponent implements OnInit {
     // disableDoubleClickZoom: true,
   }
 
-  markerabc = {
-    position: { lat: 40.10921097408571, lng: -88.22723153914798 },
-  }
-
-  pin:EventPin = {
-    name: "hi",
-    address: "hi",
-    position: {
-      lat: 7,
-      lng: 7,
-    },
-    purpose: "hi"
-  }
+  // pin:EventPin = {
+  //   address: "address",
+  //   position: {
+  //     lat: 40.10921097408571,
+  //     lng: -88.22723153914798,
+  //   },
+  //   title: "title",
+  //   info: "info",
+  // }
 
   markers:any[] = []
+
+  infoContent = ''
 
   ngOnInit() {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -46,25 +44,41 @@ export class MapComponent implements OnInit {
 
   click(event: google.maps.MapMouseEvent) {
     console.log(event)
-    this.addMarker(this.pin)
+
+    var pin:EventPin = {
+      address: "address",
+      position: {
+        lat: event.latLng?.lat() || 0,
+        lng: event.latLng?.lng() || 0,
+      },
+      title: "title",
+      info: "info",
+    }
+
+    this.addMarker(pin)
   }
 
   addMarker(pin:EventPin) {
     console.log("add marker")
     this.markers.push({
       position: {
-        lat: this.markerabc.position.lat + ((Math.random() - 0.5) * 2) / 10,
-        lng: this.markerabc.position.lng + ((Math.random() - 0.5) * 2) / 10,
+        lat: pin.position.lat,
+        lng: pin.position.lng,
       },
-      label: {
-        color: 'red',
-        text: 'Marker label ' + (this.markers.length + 1),
-      },
-      title: 'Marker title ' + (this.markers.length + 1),
-      info: 'Marker info ' + (this.markers.length + 1),
+      // label: {
+      //   color: 'red',
+      //   text: 'Marker label(on marker)' + (this.markers.length + 1),
+      // },
+      title: 'Marker title(mouseover)' + (this.markers.length + 1),
+      info: 'Marker info(click)' + (this.markers.length + 1),
       options: {
         // animation: google.maps.Animation.BOUNCE,
       },
     })
+  }
+
+  openInfo(marker: MapMarker, content: string) {
+    this.infoContent = content
+    this.info.open(marker)
   }
 }
