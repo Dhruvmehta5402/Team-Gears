@@ -8,12 +8,12 @@ if($link === false){
 }
  
 // Attempt insert query execution
-/*$name =  $_REQUEST['name'];
+$name =  $_REQUEST['name'];
 $address = $_REQUEST['address'];
-$purpose = $_REQUEST['purpose'];*/
+$purpose = $_REQUEST['purpose'];
  
-//$sql = "INSERT INTO location  VALUES ('$name', '$address', '$purpose')";
-$sql = "INSERT INTO location  VALUES ('pr1', 'pr2', 'pr3')";
+$sql = "INSERT INTO location  VALUES ('$name', '$address', '$purpose')";
+//$sql = "INSERT INTO location  VALUES ('pr1', 'pr2', 'pr3')";
 
 if(mysqli_query($link, $sql)){
     echo "Records inserted successfully.";
