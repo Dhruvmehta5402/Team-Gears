@@ -15,12 +15,14 @@ $purpose = $_POST['purpose'];
 $sql = "INSERT INTO location  VALUES ('$name', '$address', '$purpose')";
 //$sql = "INSERT INTO location  VALUES ('pr1', 'pr2', 'pr3')";
 
+if( !empty($name) && !empty($address) &&!empty($purpose){ 
+
 if(mysqli_query($link, $sql)){
     echo "Records inserted successfully.";
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
- 
+}
 // Close connection
 mysqli_close($link);
 ?>
