@@ -78,6 +78,7 @@ export class MapComponent implements OnInit {
   }
 
   openInfo(marker: MapMarker, content: string) {
+    console.log("CLICKED MARKER")
     this.infoContent = content
     this.info.open(marker)
   }
