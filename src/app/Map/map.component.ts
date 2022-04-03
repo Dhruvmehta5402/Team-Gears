@@ -16,7 +16,12 @@ export class MapComponent {
     zoom : 16,
     disableDefaultUI: true,
   }
+  
   marker = {
     position: { lat: 40.10921097408571, lng: -88.22723153914798 },
+    label: 'Union'
   }
+
+  //get addresses from the database to make ana array of addresses
+  //and in the html file loop through the array to put in many markers
 }
