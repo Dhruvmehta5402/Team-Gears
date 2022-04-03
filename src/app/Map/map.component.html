@@ -1,3 +1,11 @@
-<google-map [options]="mapOptions" height="100%" width="100%">
-  <map-marker [position]="marker.position"></map-marker>
+<google-map [options]="mapOptions" height="100%" width="100%" (mapClick)="click($event)">
+  <map-marker [position]="markerabc.position"></map-marker>
+    <map-marker
+      #markerElem  *ngFor="let marker of markers"
+      [position]="marker.position"
+      [label]="marker.label"
+      [title]="marker.title"
+      [options]="marker.options">
+    </map-marker>
 </google-map>
+<button (click)="addMarker(pin)">Add marker</button>
