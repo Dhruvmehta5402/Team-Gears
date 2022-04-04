@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-<?php
-include 'info.php';
-?>
 
 @Component({
   selector: 'app-add-location',
@@ -24,4 +21,10 @@ export class AddLocationComponent implements OnInit {
     this.diaglogRef.closeAll();
   }
 
+  <?php
+  include 'info.php';
+  ?>
+  
 }
+
+
