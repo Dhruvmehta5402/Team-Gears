@@ -15,6 +15,7 @@ export class AddLocationComponent implements OnInit {
 
   onSubmit(login: any) {
     console.log("Form submitted", login);
+    url: "info.php";  
     alert("hiiii");
   }
 
