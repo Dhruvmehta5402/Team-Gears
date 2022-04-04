@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+<script src="info.php"></script>
 
 @Component({
   selector: 'app-add-location',
