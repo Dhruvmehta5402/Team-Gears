@@ -3,7 +3,7 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-location',
-  templateUrl: './add-location.component.html',
+  templateUrl: "'./add-location.component.html', './info.php'"
   styleUrls: ['./add-location.component.css']
 })
 export class AddLocationComponent implements OnInit {
