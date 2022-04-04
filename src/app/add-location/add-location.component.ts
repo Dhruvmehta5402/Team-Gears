@@ -21,9 +21,7 @@ export class AddLocationComponent implements OnInit {
     this.diaglogRef.closeAll();
   }
 
-  <?
-    require 'info.php';
-?>
+  
   
 }
 
