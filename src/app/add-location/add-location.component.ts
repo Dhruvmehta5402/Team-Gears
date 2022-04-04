@@ -15,7 +15,7 @@ export class AddLocationComponent implements OnInit {
 
   onSubmit(login: any) {
     console.log("Form submitted", login);
-    alert("hiiii");
+    //alert("hiiii");
   }
 
   closeDialog() {
