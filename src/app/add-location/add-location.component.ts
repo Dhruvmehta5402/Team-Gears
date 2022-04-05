@@ -1,31 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-
+import { Component } from '@angular/core';
 @Component({
-  selector: 'app-add-location',
-  templateUrl: './add-location.component.html',
-  styleUrls: ['./add-location.component.css']
+
+ selector: 'app-add-location',
+ providers: [],
+template:
+<div>
+  <h1>New Event</h1>
+  <form  action = "info.php" method = "post">
+         <label for="name">Name</label><br />
+      <input type="text" name="name"  />
+      <label for="address">Address</label><br />
+       <input type="text" name="address" />
+         <label for="purpose">Purpose</label><br />
+      <textarea name="purpose" cols="30" rows="5" ></textarea>
+    <button  type="submit" >Submit</button>
+  </form>
+</div>
+,
+directives: []
 })
-export class AddLocationComponent implements OnInit {
 
-  constructor(private diaglogRef: MatDialog) {}
-
-  ngOnInit(): void {
-  }
-
-  onSubmit(login: any) {
-    //console.log("Form submitted", login);
-    //alert("hiiii");
-    return true;
-  }
-
-  closeDialog() {
-    this.diaglogRef.closeAll();
-
-  }
-
-  
-  
+export class AddLocationComponent  {
+  constructor() {
+this.name = 'Angular'
 }
-
+}
 
