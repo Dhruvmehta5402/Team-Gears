@@ -8,7 +8,7 @@ if($link === false){
 }
  
 // Attempt insert query execution
-$name =  $_POST['name'];
+$name =  $_POST['event_name'];
 $address = $_POST['address'];
 $purpose = $_POST['purpose'];
  
