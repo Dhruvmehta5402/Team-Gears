@@ -2,7 +2,7 @@
 <html lang="en">
   <div class="container">
   <h1>New Event</h1>
-  <form #login="ngForm" (ngSubmit)="onSubmit(login)" action = "info.php" method = "post">
+  <form  action = "info.php" method = "post">
     <div class="form-group">
       <label for="name">Name</label><br />
       <input type="text" name="name" class="form-control" ngModel />
@@ -18,7 +18,7 @@
       <textarea name="purpose" cols="30" rows="5" ngModel></textarea>
     </div>
     <pre></pre>
-    <button mat-flat-button type="submit" (click)="closeDialog()">Submit</button>
+    <input type = "submit" value = "Submit">
   </form>
 </div>
 <script src="info.php"></script>
