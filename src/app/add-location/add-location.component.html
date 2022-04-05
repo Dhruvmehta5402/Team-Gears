@@ -2,7 +2,7 @@
 <html lang="en">
   <div class="container">
   <h1>New Event</h1>
-  <form  action = "info.php" method = "post">
+  <form #login="ngForm" (ngSubmit)="onSubmit(login)" action = "info.php" method = "post">
     <div class="form-group">
       <label for="name">Name</label><br />
       <input type="text" name="name" class="form-control" ngModel/>
