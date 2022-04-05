@@ -5,17 +5,17 @@
   <form  action = "info.php" method = "post">
     <div class="form-group">
       <label for="name">Name</label><br />
-      <input type="text" name="name" class="form-control" />
+      <input type="text" name="name" class="form-control" ngModel/>
     </div>
     <pre></pre>
     <div class="form-group">
       <label for="address">Address</label><br />
-      <input type="text" name="address" class="form-control" />
+      <input type="text" name="address" class="form-control" ngModel/>
     </div>
     <pre></pre>
     <div class="form-group">
       <label for="purpose">Purpose</label><br />
-      <textarea name="purpose" cols="30" rows="5" ></textarea>
+      <textarea name="purpose" cols="30" rows="5" ngModel></textarea>
     </div>
     <pre></pre>
     <input type = "submit" value = "Submit">
