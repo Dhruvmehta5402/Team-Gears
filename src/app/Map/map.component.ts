@@ -72,7 +72,7 @@ export class MapComponent implements OnInit {
       title: 'Marker title(mouseover)' + (this.markers.length + 1),
       info: 'Marker info(click)' + (this.markers.length + 1),
       options: {
-        // animation: google.maps.Animation.BOUNCE,
+        animation: google.maps.Animation.DROP,
       },
     })
   }
