@@ -71,8 +71,8 @@ export class MapComponent implements OnInit {
       //   color: 'red',
       //   text: 'Marker label(on marker)' + (this.markers.length + 1),
       // },
-      title: 'Marker title(mouseover)' + (this.markers.length + 1),
-      info: pin.info + 'Marker info(click)' + (this.markers.length + 1),
+      title: pin.title,
+      info: pin.info,
       options: {
         animation: google.maps.Animation.DROP,
       },
