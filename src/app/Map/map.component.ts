@@ -59,26 +59,28 @@ export class MapComponent implements OnInit {
   }
 
   addMarker(pin:EventPin) {
-    console.log("add marker")
+    // console.log("add marker")
     this.markers.push({
+      lat: pin.position.lat,
+      lng: pin.position.lng,
       position: {
         lat: pin.position.lat,
         lng: pin.position.lng,
       },
-      label: {
-        color: 'red',
-        text: 'Marker label(on marker)' + (this.markers.length + 1),
-      },
+      // label: {
+      //   color: 'red',
+      //   text: 'Marker label(on marker)' + (this.markers.length + 1),
+      // },
       title: 'Marker title(mouseover)' + (this.markers.length + 1),
-      // info: 'Marker info(click)' + (this.markers.length + 1),
+      info: pin.info + 'Marker info(click)' + (this.markers.length + 1),
       options: {
         animation: google.maps.Animation.DROP,
       },
     })
   }
 
-  openInfo(marker: MapMarker, content: string) {
-    console.log("CLICKED MARKER")
+  openInfo(marker:MapMarker, content:string) {
+    // console.log("CLICKED MARKER")
     this.infoContent = content
     this.infoWindow.open(marker)
   }
