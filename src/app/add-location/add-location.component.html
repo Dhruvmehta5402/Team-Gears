@@ -1,21 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
 <div class="container">
   <h1>New Event</h1>
-  <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+  <form
+    #form="ngForm"
+    (ngSubmit)="onSubmit(form)"
+    action="info.php"
+    method="post"
+    novalidate
+  >
     <div class="form-group">
       <label for="name">Name</label><br />
-      <input type="text" name="name" class="form-control" ngModel />
+      <input
+        required
+        ngModel
+        name="event_name"
+        class="form-control"
+        #name="ngModel"
+        type="text"
+      />
     </div>
     <pre></pre>
     <div class="form-group">
       <label for="address">Address</label><br />
-      <input type="text" name="address" class="form-control" ngModel />
+      <input
+        required
+        ngModel
+        name="address"
+        class="form-control"
+        #address="ngModel"
+        type="text"
+        placeholder="Full address."
+      />
     </div>
     <pre></pre>
     <div class="form-group">
       <label for="purpose">Purpose</label><br />
-      <textarea name="purpose" cols="30" rows="5" ngModel></textarea>
+      <textarea
+        ngModel
+        name="purpose"
+        class="form-control"
+        cols="30"
+        rows="5"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="other-info">Other Information and Guidelines</label><br />
+      <textarea
+        ngModel
+        name="other-info"
+        class="form-control"
+        placeholder="Other information and Covid-19 protocols."
+        cols="30"
+        rows="5"
+      ></textarea>
     </div>
     <pre></pre>
+    <button
+      mat-flat-button
+      type="submit"
+      class="btn btn-primary"
+      (click)="closeDialog()"
+      [disabled]="!form.form.valid"
+    >
+      Submit
+    </button>
   </form>
-  <button mat-flat-button type="submit" (click)="closeDialog()">Submit</button>
 </div>
+<script src="info.php"></script>
+</html>
+{{ form.value | json }}

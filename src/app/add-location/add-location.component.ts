@@ -1,5 +1,7 @@
+import { trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { NgForm } from '@angular/forms';
+import {MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-location',
@@ -13,8 +15,17 @@ export class AddLocationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(login: any) {
-    console.log("Form submitted", login)
+  onSubmit(form: NgForm) {
+    console.log("Form submitted", form.value)
+    /*
+    TODO: when submitted, form object gets passed on the console. So maybe in onSubmit() trigger
+    another function that will take in the address and create a marker in maps component.
+    Probably something to do with two way binding?
+
+    Or maybe everytime user submits the form, store data in a database using MySQL, 
+    then create array in mapComponent of addresses, 
+    then loop through addresses to add markers.
+    */
   }
 
   closeDialog() {

@@ -84,4 +84,7 @@ export class MapComponent implements OnInit {
     this.infoContent = content
     this.infoWindow.open(marker)
   }
+
+  //get addresses from the database to make ana array of addresses
+  //and in the html file loop through the array to put in many markers
 }

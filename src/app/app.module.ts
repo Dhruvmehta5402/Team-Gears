@@ -49,7 +49,7 @@ import { AddLocationComponent } from './add-location/add-location.component';
     HttpClientModule,
     GoogleMapsModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
