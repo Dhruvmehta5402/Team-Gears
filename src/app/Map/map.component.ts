@@ -11,7 +11,7 @@ import { EventPin } from "./event.model";
 
 export class MapComponent implements OnInit {
   @ViewChild(GoogleMap, { static: false }) map!: GoogleMap
-  @ViewChild(MapInfoWindow, { static: false }) info!: MapInfoWindow
+  @ViewChild(MapInfoWindow, { static: false }) infoWindow!: MapInfoWindow
 
   mapOptions: google.maps.MapOptions = {
     center: { lat: 40.10921097408571, lng: -88.22723153914798 },
@@ -35,7 +35,7 @@ export class MapComponent implements OnInit {
 
   markers:any[] = []
 
-  infoContent = ''
+  infoContent:string = ''
 
   ngOnInit() {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -65,12 +65,12 @@ export class MapComponent implements OnInit {
         lat: pin.position.lat,
         lng: pin.position.lng,
       },
-      // label: {
-      //   color: 'red',
-      //   text: 'Marker label(on marker)' + (this.markers.length + 1),
-      // },
+      label: {
+        color: 'red',
+        text: 'Marker label(on marker)' + (this.markers.length + 1),
+      },
       title: 'Marker title(mouseover)' + (this.markers.length + 1),
-      info: 'Marker info(click)' + (this.markers.length + 1),
+      // info: 'Marker info(click)' + (this.markers.length + 1),
       options: {
         animation: google.maps.Animation.DROP,
       },
@@ -80,6 +80,6 @@ export class MapComponent implements OnInit {
   openInfo(marker: MapMarker, content: string) {
     console.log("CLICKED MARKER")
     this.infoContent = content
-    this.info.open(marker)
+    this.infoWindow.open(marker)
   }
 }
