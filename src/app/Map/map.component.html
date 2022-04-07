@@ -1,12 +1,18 @@
-<google-map [options]="mapOptions" height="100%" width="100%" (mapClick)="click($event)">
-    <map-marker
-      #mapMarker="mapMarker"
-      *ngFor="let marker of markers"
-      [position]="marker.position"
-      [label]="marker.label"
-      [title]="marker.title"
-      [options]="marker.options"
-      (mapClick)="openInfo(mapMarker, marker.info)">
-    </map-marker>
-    <map-info-window>{{ infoContent }}</map-info-window>
+<google-map
+  [options]="mapOptions"
+  height="100%"
+  width="100%"
+  (mapClick)="click($event)"
+>
+  <map-marker
+    #mapMarker="mapMarker"
+    *ngFor="let marker of markers"
+    [position]="marker.position"
+    [label]="marker.label"
+    [title]="marker.title"
+    [options]="marker.options"
+    (mapClick)="openInfo(mapMarker, marker.info)"
+  >
+  </map-marker>
+  <map-info-window>{{ infoContent }}</map-info-window>
 </google-map>

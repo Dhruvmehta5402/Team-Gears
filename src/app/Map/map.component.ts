@@ -2,6 +2,8 @@ import { style } from "@angular/animations";
 import { Component, OnInit, ViewChild } from '@angular/core'
 import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps'
 import { EventPin } from "./event.model";
+import { Subscription } from "rxjs";
+import { InteractionService } from "../interaction.service";
 
 @Component({
   selector: 'app-map',
@@ -12,6 +14,18 @@ import { EventPin } from "./event.model";
 export class MapComponent implements OnInit {
   @ViewChild(GoogleMap, { static: false }) map!: GoogleMap
   @ViewChild(MapInfoWindow, { static: false }) infoWindow!: MapInfoWindow
+  
+  //pushEventPinSubscription:Subscription;
+
+  constructor(private interactiveService:InteractionService) {}
+
+  ngOnInit() {
+    navigator.geolocation.getCurrentPosition((position) => {
+    })
+    this.interactiveService.getPushEventPin().subscribe(eventPin=>{
+      this.addMarker(eventPin);
+    })
+  }
 
   mapOptions: google.maps.MapOptions = {
     center: { lat: 40.10921097408571, lng: -88.22723153914798 },
@@ -37,11 +51,6 @@ export class MapComponent implements OnInit {
 
   infoContent:string = ''
 
-  ngOnInit() {
-    navigator.geolocation.getCurrentPosition((position) => {
-    })
-  }
-
   click(event: google.maps.MapMouseEvent) {
     console.log(event)
 
@@ -59,7 +68,7 @@ export class MapComponent implements OnInit {
   }
 
   addMarker(pin:EventPin) {
-    // console.log("add marker")
+    console.log("add marker", pin.position.lat, pin.position.lng)
     this.markers.push({
       lat: pin.position.lat,
       lng: pin.position.lng,
