@@ -1,6 +1,9 @@
 export interface EventPin {
-  id: string;
-  name: string;
   address: string;
-  purpose: string;
+  position: {
+    lat: number;
+    lng: number;
+  }
+  title: string;
+  info: string;
 }
