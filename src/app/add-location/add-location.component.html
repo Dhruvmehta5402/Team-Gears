@@ -23,13 +23,26 @@
       </div>
       <pre></pre>
       <div class="form-group">
+        <label for="address">Address</label><br />
+        <input
+          ngModel
+          name="address"
+          class="form-control"
+          #address="ngModel"
+          type="text"
+          placeholder="Include full address"
+        />
+      </div>
+      <pre></pre>
+      <pre></pre>
+      <div class="form-group">
         <label for="latitude">Latidtude</label><br />
         <input
           required
           ngModel
           name="latitude"
           class="form-control"
-          #address="ngModel"
+          #latitude="ngModel"
           type="number"
           placeholder="Latitude"
         />
@@ -43,7 +56,7 @@
           ngModel
           name="longitude"
           class="form-control"
-          #address="ngModel"
+          #longitude="ngModel"
           type="number"
           placeholder="Longitude"
         />
