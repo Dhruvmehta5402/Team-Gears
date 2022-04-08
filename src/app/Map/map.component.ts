@@ -58,13 +58,13 @@ export class MapComponent implements OnInit {
     console.log(event)
 
     var pin:EventPin = {
-      address: "address",
+      address: "Customaddress",
       position: {
         lat: event.latLng?.lat() || 0,
         lng: event.latLng?.lng() || 0,
       },
-      title: "Title",
-      info: "info",//remove
+      title: "CustomTitle",
+      info: "Custoninfo",//remove
       //uncomment these
       // eventDetails:"blahblah";
       // otherInformation:"covidinfomaybe";
@@ -92,6 +92,7 @@ export class MapComponent implements OnInit {
         animation: google.maps.Animation.DROP,
       },
       //Uncomment these
+      address: pin.address
       // eventDetails: pin.eventDetails,
       // otherInformation: pin.otherInformation
     })
@@ -101,10 +102,10 @@ export class MapComponent implements OnInit {
     // console.log("CLICKED MARKER")
     // this.title = marker.info
     // this.info = marker.info
-    this.otherInformation = marker.info
-    this.address = marker.address
-    this.eventDetails = marker.eventDetails
     this.title = marker.title
+    this.address = marker.address
+    this.eventDetails = marker.info
+    this.otherInformation = marker.info
 
     this.infoWindow.open(mapMarker)
   }
