@@ -5,8 +5,6 @@ export interface EventPin {
     lng: number;
   }
   title: string;
-  info: string;
-
-  // eventDetails:string;
-  // otherInformation:string;
+  eventDetails:string;
+  otherInformation:string;
 }
