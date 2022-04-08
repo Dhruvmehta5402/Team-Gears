@@ -23,6 +23,7 @@ import { SidePanelComponent } from './SidePanel/sidePanel.component';
 import { MapComponent } from './Map/map.component';
 import { SearchBarComponent } from './SearchBar/searchBar.component';
 import { AddLocationComponent } from './add-location/add-location.component';
+import { InfoWindowComponent } from './info-window/info-window.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AddLocationComponent } from './add-location/add-location.component';
     MapComponent,
     SearchBarComponent,
     AddLocationComponent,
+    InfoWindowComponent,
   ],
   imports: [
     BrowserModule,

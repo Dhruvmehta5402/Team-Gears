@@ -14,7 +14,7 @@ import { InteractionService } from "../interaction.service";
 export class MapComponent implements OnInit {
   @ViewChild(GoogleMap, { static: false }) map!: GoogleMap
   @ViewChild(MapInfoWindow, { static: false }) infoWindow!: MapInfoWindow
-  
+
   //pushEventPinSubscription:Subscription;
 
   constructor(private interactiveService:InteractionService) {}
@@ -48,8 +48,11 @@ export class MapComponent implements OnInit {
   // }
 
   markers:any[] = []
-
-  infoContent:string = ''
+  currMarker!:any
+  title:string  = ''
+  address:string = ''
+  eventDetails:string = ''
+  otherInformation:string = ''
 
   click(event: google.maps.MapMouseEvent) {
     console.log(event)
@@ -60,8 +63,11 @@ export class MapComponent implements OnInit {
         lat: event.latLng?.lat() || 0,
         lng: event.latLng?.lng() || 0,
       },
-      title: "title",
-      info: "info",
+      title: "Title",
+      info: "info",//remove
+      //uncomment these
+      // eventDetails:"blahblah";
+      // otherInformation:"covidinfomaybe";
     }
 
     this.addMarker(pin)
@@ -81,17 +87,26 @@ export class MapComponent implements OnInit {
       //   text: 'Marker label(on marker)' + (this.markers.length + 1),
       // },
       title: pin.title,
-      info: pin.info,
+      info: pin.info,//get rid of
       options: {
         animation: google.maps.Animation.DROP,
       },
+      //Uncomment these
+      // eventDetails: pin.eventDetails,
+      // otherInformation: pin.otherInformation
     })
   }
 
-  openInfo(marker:MapMarker, content:string) {
+  openInfo(mapMarker:MapMarker, marker:any) {
     // console.log("CLICKED MARKER")
-    this.infoContent = content
-    this.infoWindow.open(marker)
+    // this.title = marker.info
+    // this.info = marker.info
+    this.otherInformation = marker.info
+    this.address = marker.address
+    this.eventDetails = marker.eventDetails
+    this.title = marker.title
+
+    this.infoWindow.open(mapMarker)
   }
 
   //get addresses from the database to make ana array of addresses

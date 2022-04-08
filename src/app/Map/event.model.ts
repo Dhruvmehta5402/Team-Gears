@@ -6,4 +6,7 @@ export interface EventPin {
   }
   title: string;
   info: string;
+
+  // eventDetails:string;
+  // otherInformation:string;
 }
