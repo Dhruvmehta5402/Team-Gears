@@ -1,72 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<div class="container">
-  <h1>New Event</h1>
-  <form
-    #form="ngForm"
-    (ngSubmit)="onSubmit(form)"
-    action="info.php"
-    method="post"
-    novalidate
-  >
-    <div class="form-group">
-      <label for="name">Name</label><br />
-      <input
-        required
-        ngModel
-        name="event_name"
-        class="form-control"
-        #name="ngModel"
-        type="text"
-      />
-    </div>
-    <pre></pre>
-    <div class="form-group">
-      <label for="address">Address</label><br />
-      <input
-        required
-        ngModel
-        name="address"
-        class="form-control"
-        #address="ngModel"
-        type="text"
-        placeholder="Full address."
-      />
-    </div>
-    <pre></pre>
-    <div class="form-group">
-      <label for="purpose">Purpose</label><br />
-      <textarea
-        ngModel
-        name="purpose"
-        class="form-control"
-        cols="30"
-        rows="5"
-      ></textarea>
-    </div>
-    <div class="form-group">
-      <label for="other-info">Other Information and Guidelines</label><br />
-      <textarea
-        ngModel
-        name="other-info"
-        class="form-control"
-        placeholder="Other information and Covid-19 protocols."
-        cols="30"
-        rows="5"
-      ></textarea>
-    </div>
-    <pre></pre>
-    <button
-      mat-flat-button
-      type="submit"
-      class="btn btn-primary"
-      (click)="closeDialog()"
-      [disabled]="!form.form.valid"
+  <div class="container">
+    <h1>New Event</h1>
+    <form
+      #form="ngForm"
+      (ngSubmit)="onSubmit(form)"
+      action="info.php"
+      method="post"
+      novalidate
     >
-      Submit
-    </button>
-  </form>
-</div>
-<script src="info.php"></script>
+      <div class="form-group">
+        <label for="name">Name</label><br />
+        <input
+          required
+          ngModel
+          name="event_name"
+          class="form-control"
+          placeholder="Event name"
+          #name="ngModel"
+          type="text"
+        />
+      </div>
+      <pre></pre>
+      <div class="form-group">
+        <label for="address">Address</label><br />
+        <input
+          ngModel
+          name="address"
+          class="form-control"
+          #address="ngModel"
+          type="text"
+          placeholder="Include full address"
+        />
+      </div>
+      <pre></pre>
+      <pre></pre>
+      <div class="form-group">
+        <label for="latitude">Latidtude</label><br />
+        <input
+          required
+          ngModel
+          name="latitude"
+          class="form-control"
+          #latitude="ngModel"
+          type="number"
+          placeholder="Latitude"
+        />
+      </div>
+      <pre></pre>
+      <pre></pre>
+      <div class="form-group">
+        <label for="longitude">Longitude</label><br />
+        <input
+          required
+          ngModel
+          name="longitude"
+          class="form-control"
+          #longitude="ngModel"
+          type="number"
+          placeholder="Longitude"
+        />
+      </div>
+      <pre></pre>
+      <div class="form-group">
+        <label for="purpose">Purpose</label><br />
+        <textarea
+          ngModel
+          name="purpose"
+          class="form-control"
+          placeholder="Purpose of the event"
+          cols="30"
+          rows="5"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="other-info">Other Information and Guidelines</label><br />
+        <textarea
+          ngModel
+          name="other-info"
+          class="form-control"
+          placeholder="Other information and Covid-19 protocols"
+          cols="30"
+          rows="5"
+        ></textarea>
+      </div>
+      <pre></pre>
+      <button
+        mat-flat-button
+        type="submit"
+        class="btn btn-primary"
+        (click)="closeDialog()"
+        [disabled]="!form.form.valid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+  <script src="info.php"></script>
 </html>
 {{ form.value | json }}
