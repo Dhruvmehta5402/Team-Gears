@@ -21,13 +21,14 @@ export class AddLocationComponent implements OnInit {
     console.log("Form submitted", form.value)
 
     var pin:EventPin = {
-      address: "address",
+      address: form.value.address,
       position: {
         lat: form.value.latitude || 0,
         lng: form.value.longitude|| 0,
       },
       title: form.value.event_name,
-      info: form.value.purpose,
+      eventDetails:form.value.purpose,
+      otherInformation: form.value.other_info,
     }
     this.interactiveService.sendPushEventPin(pin);
   }
