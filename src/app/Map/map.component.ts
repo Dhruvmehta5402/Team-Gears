@@ -64,13 +64,9 @@ export class MapComponent implements OnInit {
         lng: event.latLng?.lng() || 0,
       },
       title: "Title",
+      //uncomment these
       eventDetails:"blahblah",
       otherInformation:"covidinfomaybe",
-      title: "CustomTitle",
-      info: "Custoninfo",//remove
-      //uncomment these
-      eventDetails:"blahblah";
-      otherInformation:"covidinfomaybe";
     }
 
     this.addMarker(pin)
@@ -94,7 +90,7 @@ export class MapComponent implements OnInit {
         animation: google.maps.Animation.DROP,
       },
       //Uncomment these
-      address: pin.address
+      address: pin.address,
       eventDetails: pin.eventDetails,
       otherInformation: pin.otherInformation
     })
@@ -108,9 +104,9 @@ export class MapComponent implements OnInit {
     this.address = marker.address
     this.eventDetails = marker.eventDetails
     this.title = marker.title
-    this.address = marker.address
-    this.eventDetails = marker.info
-    this.otherInformation = marker.info
+    //this.address = marker.address
+    //this.eventDetails = marker.info
+    //this.otherInformation = marker.info
 
     this.infoWindow.open(mapMarker)
   }
