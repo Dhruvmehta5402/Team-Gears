@@ -17,8 +17,6 @@ export class AddLocationComponent implements OnInit {
 
   constructor(private diaglogRef: MatDialog, private interactiveService: InteractionService, private getLatLng: GetlatlngService) {}
 
-  private latitude:string = "";
-  private longitude:string = "";
   ngOnInit(): void {
   }
 
