@@ -1,0 +1,65 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+    margin:0;
+    font-family: Georgia, serif;
+    font-size:17px;
+    color:#ffffff;
+    line-height:1.6;
+}
+
+img {
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#showcase {
+    background-color:#13294B;
+    background-size:cover;
+    background-position:center;
+    height:100vh;
+    display:flex;
+
+    flex-direction:column;
+    justify-content:center;
+    align-content:center;
+    padding:0 20px;
+}
+
+#showcase h1{
+    font-size: 50px;
+    font-family: Georgia, serif;
+    text-align:center;
+    
+}
+
+#showcase p{
+    font-size: 20px;
+    font-family: Georgia, serif;
+    text-align:center;
+}
+
+#showcase .button {
+    background:#ffffff;
+    font-size: 20px;
+    font-family: Georgia, serif;
+
+    text-decoration:none;
+    color: #E84A27;
+    text-align:center;
+    border: #ffffff 1px solid;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top:20px;
+     
+}
+
+#showcase .button:hover{
+    background:#E84A27;
+    color:#ffffff;
+}
