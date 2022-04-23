@@ -14,6 +14,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http'
 import {MatDialogModule} from '@angular/material/dialog';
+import { Router, RouterModule } from '@angular/router';
 
 import { GoogleMapsModule } from '@angular/google-maps'
 
@@ -24,6 +25,7 @@ import { MapComponent } from './Map/map.component';
 import { SearchBarComponent } from './SearchBar/searchBar.component';
 import { AddLocationComponent } from './add-location/add-location.component';
 import { InfoWindowComponent } from './info-window/info-window.component';
+import { LandingPageComponent } from './landing-page/landing-page.component'
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { InfoWindowComponent } from './info-window/info-window.component';
     SearchBarComponent,
     AddLocationComponent,
     InfoWindowComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,10 @@ import { InfoWindowComponent } from './info-window/info-window.component';
     GoogleMapsModule,
     MatDialogModule,
     FormsModule,
+    RouterModule.forRoot([
+      {path: '', component: LandingPageComponent},
+      {path: 'map', component: MapComponent}
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
