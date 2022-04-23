@@ -25,7 +25,8 @@ import { MapComponent } from './Map/map.component';
 import { SearchBarComponent } from './SearchBar/searchBar.component';
 import { AddLocationComponent } from './add-location/add-location.component';
 import { InfoWindowComponent } from './info-window/info-window.component';
-import { LandingPageComponent } from './landing-page/landing-page.component'
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AppRoutingModule } from './app-routing.module'
 
 @NgModule({
   declarations: [
@@ -57,8 +58,9 @@ import { LandingPageComponent } from './landing-page/landing-page.component'
     FormsModule,
     RouterModule.forRoot([
       {path: '', component: LandingPageComponent},
-      {path: 'map', component: MapComponent}
+      {path: 'map', component: SidePanelComponent}
     ]),
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
