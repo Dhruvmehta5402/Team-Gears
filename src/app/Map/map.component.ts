@@ -4,6 +4,7 @@ import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps'
 import { EventPin } from "./event.model";
 import { Subscription } from "rxjs";
 import { InteractionService } from "../interaction.service";
+import { GetlatlngService } from '../getlatlng.service';
 
 @Component({
   selector: 'app-map',
@@ -17,13 +18,18 @@ export class MapComponent implements OnInit {
 
   //pushEventPinSubscription:Subscription;
 
-  constructor(private interactiveService:InteractionService) {}
+  constructor(private interactiveService:InteractionService, private getLatLng: GetlatlngService) {}
 
   ngOnInit() {
     navigator.geolocation.getCurrentPosition((position) => {
     })
     this.interactiveService.getPushEventPin().subscribe(eventPin=>{
-      this.addMarker(eventPin);
+      this.getLatLng.getLatLng(eventPin.address).subscribe(data => {
+        console.log("in getLatLng",eventPin.address, data.results[0].geometry.location.lat, data.results[0].geometry.location.lng,eventPin.title, eventPin.eventDetails, eventPin.otherInformation);
+        eventPin.position.lat=data.results[0].geometry.location.lat
+        eventPin.position.lng=data.results[0].geometry.location.lng
+        this.addMarker(eventPin);
+      })
     })
   }
 
